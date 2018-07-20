@@ -1,0 +1,2 @@
+ # Pour les cle prive c'est /etc/ssh/ssh_host_rsa_key
+ # Pour les cle public c'est /etc/ssh/ssh_host_rsa_key.pub

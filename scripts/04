@@ -1,0 +1,15 @@
+#!/bin/sh
+crontab -l > test
+
+echo "00 00 * * * 
+ if [[ -f /root/save ]] ;then
+		md5sum /etc/crontab > /root/save2
+		if [[ $(diff /root/save /root/save2) ]] ;then
+				echo "File has changed" | mail -s "file changed" root
+				md5sum /etc/crontab > /root/save
+		fi
+	else
+		md5sum /etc/crontab >> /root/save
+fi" >> test
+crontab test
+rm test

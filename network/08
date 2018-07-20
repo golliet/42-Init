@@ -1,0 +1,2 @@
+#whois slash16.org | grep Registrar: | cut -d ':' -f2
+# L'hebergeur est Online (Online SAS)

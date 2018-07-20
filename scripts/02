@@ -1,0 +1,5 @@
+#!/bin/sh
+crontab -l > test
+echo "0 4 * * 1 apt-get update && apt-get upgrade >> /var/log/update_script.log " >> test
+crontab test
+rm test
